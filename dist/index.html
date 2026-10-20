@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Boothy keeps the reason behind your ride reminders. Test a whole trip, remember your belongings, and keep your parking note.">
+  <title>Boothy — Your ride, remembered</title>
+  <script src="theme.js"></script>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="model.js" defer></script>
+  <script src="device.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 9 2-5h10l2 5M4 17v3m16-3v3M3 10h18v7H3zM6 13h2m8 0h2"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4M12 2V1"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m16 3 5 5L9 20l-6 1 1-6L16 3ZM13 6l5 5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+  </svg>
+  <header class="topbar">
+    <a class="brand" href="#ride" aria-label="Boothy home"><span class="brandmark"><svg><use href="#i-pin"/></svg></span>boothy<span class="brand-dot">.</span></a>
+    <div class="header-meta"><span class="private-badge"><span></span>Private prototype</span><span class="version">RIDE LAB / 01</span><button type="button" id="theme-toggle" class="theme-toggle" data-action="toggleTheme" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><svg aria-hidden="true"><use href="#i-moon"/></svg><span>Dark</span></button></div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar">
+      <div class="sidebar-label">YOUR TRAVEL COMPANION</div>
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-item active" data-tab="ride"><svg><use href="#i-car"/></svg><span>Ride</span><span class="nav-dot"></span></button>
+        <button class="nav-item" data-tab="reminders"><svg><use href="#i-bell"/></svg><span>Reminders</span></button>
+        <button class="nav-item" data-tab="parking"><svg><use href="#i-pin"/></svg><span>Parking</span></button>
+      </nav>
+      <div class="sidebar-note"><span class="tiny-spark">✳</span><p>Take the ride.<br>Keep the important bits.</p><span>One less thing on your mind.</span></div>
+      <div class="local-note"><svg><use href="#i-info"/></svg><span>Saved on this device</span></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><p class="eyebrow" id="page-eyebrow">LET'S GET YOU THERE</p><h1 id="page-title">Your ride, remembered.</h1><p class="subtitle" id="page-subtitle">A nudge at the right moment. A reason you'll recognise.</p></div><span class="heading-icon"><svg><use href="#i-car"/></svg></span></div>
+      <div class="simulation-note" id="mode-notice"><span class="simulation-dot"></span><strong>Simulation mode</strong><span>Trips and locations are simulated. Reminders appear here while the app is open.</span></div>
+      <div id="storage-warning" class="warning" hidden>Device storage is unavailable. Your changes will last until this page closes.</div>
+      <section id="notice-region" aria-label="Active reminders" aria-live="polite" aria-atomic="false"></section>
+      <div class="content-grid"><div id="view"></div><aside id="context-panel" class="context-panel" aria-label="Trip overview"></aside></div>
+      <footer class="app-footer"><span>MADE FOR THE MOMENTS BETWEEN.</span><span>Boothy · Interactive prototype</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><p class="warning">Please enable JavaScript to test the Boothy ride workflow.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "Boothy — Your ride, remembered",
+  "short_name": "Boothy",
+  "description": "Prepare for arrival, keep the reason behind each reminder, and save your parking spot.",
+  "start_url": "/#ride",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#131a16",
+  "theme_color": "#131a16",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
